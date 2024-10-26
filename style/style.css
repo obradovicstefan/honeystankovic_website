@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #ffbf00;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: "Roboto Condensed";
+  padding: 4px 15px;
+  letter-spacing: 3px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    text-shadow: 0 0 20px #ffbf00, 0 0 30px #ffbf00, 0 0 40px #ffbf00;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header img {
+  width: 200px;
+}
+
+.links {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-container {
+  flex: 1;
+  padding: 0;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.text-container {
+  flex: 1;
+  padding: 20px;
+  width: 50%;
+  gap: 10px;
+}
+
+.text-adjust {
+  color: #ffbf00;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.founder {
+  color: #ffbf00;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 1.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-title {
+  color: white;
+  font-family: "Roboto Condensed";
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.text-container h1 {
+  text-align: center;
+}
+
+.text-container h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.text-container h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 2em;
+  font-family: "Roboto Condensed";
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+.text-container p {
+  margin-top: 50px;
+}
+
+.section-separator {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
+  height: auto;
+  background-image: url("../images/honeycomb.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.section-separator img {
+  object-fit: cover;
+}
+
+.section-separator h1 {
+  color: black;
+  font-size: 3.5em;
+}
+
+.team-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.founder-container,
+.manager-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.founder-container {
+  flex-direction: row-reverse;
+}
+
+.founder-image {
+  width: 50%;
+  margin: 30px 0;
+}
+
+.founder-image img {
+  height: auto;
+  width: 100%;
+  padding: 30px;
+  object-fit: cover;
+}
+
+.line-wrapper {
+  width: 100%;
+  height: 1px;
+  background-color: #ffa500;
+  position: relative;
+}
+
+.line-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.line-notch {
+  width: 50px;
+  height: 5px;
+  background-color: yellow;
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  top: -2px;
+}
+
+.manager-image {
+  width: 30%;
+  margin: 30px 0;
+}
+
+.manager-image img {
+  height: auto;
+  width: 100%;
+  padding: 30px;
+  object-fit: cover;
+}
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image {
+  width: 50%;
+  margin: 30px 0;
+}
+
+.about-image img {
+  height: 500px;
+  width: 100%;
+  padding: 30px;
+  object-fit: cover;
+}
+
+.product-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.product-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 30px;
+  gap: 10px;
+}
+
+.product-images img {
+  width: 200px;
+  height: 230px;
+  object-fit: cover;
+  border: 8px solid #ffa500;
+}
+
+.product-images h3 {
+  text-align: center;
+}
+
+.product-images button {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #ffbf00;
+  color: #ffbf00;
+  cursor: pointer;
+  font-family: "Roboto Condensed";
+  font-size: 1.1em;
+  font-weight: 700;
+  border-radius: 200px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background-color: #ffbf00;
+    color: white;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px); /* Apply blur effect */
+  z-index: 10;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 8px solid #ffa500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  width: 1000px;
+  z-index: 100;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.modal h3 {
+  color: #ffbf00;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; /* Space between image and text */
+}
+
+.modal-text {
+  flex: 1;
+}
+
+.modal-content img {
+  width: 200px;
+  height: auto;
+  border: 8px solid #ffa500;
+  object-fit: cover;
+}
+
+.btn-close-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  align-self: flex-end;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  width: 35px;
+  height: 35px;
+
+  &::before {
+    content: "x";
+    font-family: "Roboto Condensed";
+    font-size: 1.5rem;
+    color: grey;
+  }
+
+  &:hover {
+    background-color: #ffbf00;
+    transform: scale(1.1);
+  }
+}
+
+.hidden {
+  display: none;
+}
