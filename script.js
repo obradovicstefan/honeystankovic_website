@@ -12,12 +12,12 @@ function closeModal() {
   overlay.classList.add('hidden');
 }
 
-// Open modal when a product's button is clicked
+
 document.querySelectorAll(".btn-open").forEach((button) => {
   button.addEventListener("click", (event) => {
     const product = event.currentTarget.closest(".product-images");
     const title = product.dataset.title;
-    const description = product.dataset.description.replace(/\n/g, '<br>'); // Replace \n with <br>
+    const description = product.dataset.description.replace(/\n/g, '<br>'); 
     const imageSrc = product.dataset.image;
 
 
