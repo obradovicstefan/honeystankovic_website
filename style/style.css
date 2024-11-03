@@ -8,6 +8,10 @@
 
 body {
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Roboto Condensed";
 }
 
 html {
@@ -20,7 +24,6 @@ a {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  font-family: "Roboto Condensed";
   padding: 4px 15px;
   letter-spacing: 3px;
   transition: all 0.5s ease;
@@ -48,10 +51,12 @@ a {
 }
 
 .container {
+  flex: 1; /* Ensures this section grows to take up remaining space */
   display: flex;
+  margin-top: 20px;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  height: auto; /* Allows for content to adjust dynamically */
   overflow: hidden;
 }
 
@@ -75,7 +80,6 @@ a {
 
 .text-adjust {
   color: #ffbf00;
-  font-family: "Roboto Condensed";
   font-weight: 700;
   font-size: 1.2em;
   text-transform: uppercase;
@@ -83,7 +87,6 @@ a {
 
 .founder {
   color: #ffbf00;
-  font-family: "Roboto Condensed";
   font-weight: 700;
   font-size: 1.3em;
   text-align: center;
@@ -92,7 +95,6 @@ a {
 
 .text-title {
   color: white;
-  font-family: "Roboto Condensed";
   font-size: 30px;
   text-transform: uppercase;
 }
@@ -110,11 +112,9 @@ a {
   color: white;
   font-weight: 700;
   font-size: 2em;
-  font-family: "Roboto Condensed";
   text-transform: uppercase;
   text-align: center;
 }
-
 
 .text-container p {
   margin-top: 50px;
@@ -125,6 +125,7 @@ a {
   justify-content: center;
   padding: 50px;
   width: 100%;
+  margin-top: 40px;
   height: auto;
   background-image: url("../images/honeycomb.jpg");
   background-size: cover;
@@ -233,8 +234,9 @@ a {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 500px;
-  margin-bottom: 50px;
+  margin: 30px 0;
+  /* margin-top: 500px;
+  margin-bottom: 50px; */
 }
 
 .product-images {
@@ -263,7 +265,6 @@ a {
   border: 2px solid #ffbf00;
   color: #ffbf00;
   cursor: pointer;
-  font-family: "Roboto Condensed";
   font-size: 1.1em;
   font-weight: 700;
   border-radius: 200px;
@@ -306,7 +307,6 @@ a {
 
 .modal h3 {
   color: #ffbf00;
-  font-family: "Roboto Condensed";
   font-weight: 700;
   font-size: 2.2em;
   text-transform: uppercase;
@@ -359,7 +359,6 @@ a {
 
   &::before {
     content: "x";
-    font-family: "Roboto Condensed";
     font-size: 1.5rem;
     color: grey;
   }
@@ -368,6 +367,65 @@ a {
     background-color: #ffbf00;
     transform: scale(1.1);
   }
+}
+
+.contact-section {
+  text-transform: uppercase;
+  width: 80%;
+  margin: 150px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  padding: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.contact-item img {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-item p {
+  margin-top: 100px;
+  color: #ffbf00; /* Orange color for text */
+  
+}
+
+.footer {
+  background-color: #222020; /* Dark grey background */
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  padding: 50px 0;
+  width: 100%; /* Full width */
+  font-size: 15px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  position: static; /* Allows it to appear at the bottom of the content */
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 .hidden {
