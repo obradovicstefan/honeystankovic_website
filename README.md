@@ -1,6 +1,6 @@
 # Honey Stankovic
 
-This website, titled "Honey Stankovic," is a digital showcase designed to promote and share the story of the Stanković family’s agricultural enterprise, which specializes in natural honey products. The website includes several sections that introduce visitors to the family’s background, the range of honey-based products, and the team behind the business.
+This website, titled "Honey Stankovic", is a digital showcase designed to promote and share the story of the Stanković family’s agricultural enterprise, which specializes in natural honey products. The website includes several sections that introduce visitors to the family’s background, the range of honey-based products, and the team behind the business.
 
 - Header & Navigation: The header includes a logo 
   and navigational links, enabling easy access to sections like  Home, About, Team, Products, and Contact.
