@@ -130,7 +130,7 @@ a {
   background-image: url("../images/honeycomb.webp");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
 }
 
