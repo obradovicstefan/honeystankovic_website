@@ -82,7 +82,7 @@ a {
 .text-adjust {
   color: #ffbf00;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 1em;
   text-transform: uppercase;
 }
 
@@ -168,13 +168,11 @@ a {
 
 .founder-image {
   width: 50%;
-  margin: 30px 0;
 }
 
 .founder-image img {
   height: auto;
   width: 100%;
- 
   object-fit: cover;
 }
 
@@ -204,7 +202,7 @@ a {
 
 .manager-image {
   width: 30%;
-  margin: 30px 0;
+  margin-top: 30px;
 }
 
 .manager-image img {
@@ -299,7 +297,7 @@ a {
   border: 8px solid #ffa500;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 90%;
-  width: 1000px;
+  width: 100%;
   z-index: 100;
   flex-direction: column;
   align-items: center;
@@ -323,6 +321,13 @@ a {
 
 .modal-text {
   flex: 1;
+}
+
+.text-modal {
+  color: #ffbf00;
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 .modal-content img {
@@ -401,7 +406,7 @@ a {
 .contact-section {
   text-transform: uppercase;
   width: 80%;
-  margin: 150px auto;
+  margin: 120px auto;
   padding: 20px;
   text-align: center;
 }
@@ -458,4 +463,265 @@ a {
 
 .hidden {
   display: none;
+}
+
+/* RESPONSIVE */
+
+@media all and (max-width: 1440px) {
+}
+
+@media all and (max-width: 1200px) {
+  .header img {
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .links {
+    margin-bottom: 5px;
+  }
+
+  .text-container h2 {
+    margin-top: 20px;
+  }
+
+  .text-adjust {
+    font-size: 1em;
+  }
+
+  .text-title {
+    font-size: 25px;
+  }
+
+  .product-section {
+    margin: 15px;
+  }
+
+  .section-separator {
+    padding: 25px;
+  }
+
+  .section-separator h2 {
+    font-size: 2.7em;
+  }
+
+  .founder-image {
+    margin-top: 40px;
+  }
+
+  .contact-section {
+    margin: 50px auto;
+  }
+
+  a {
+    font-size: 11px;
+  }
+}
+
+@media all and (max-width: 992px) {
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .text-container h1 {
+    padding-top: 30px;
+    font-size: 25px;
+  }
+
+  .text-container h2 {
+    margin-top: 50px;
+    font-size: 25px;
+    margin-top: 35px;
+  }
+
+  .text-container p {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .image-container img {
+    height: 300px;
+  }
+
+  .text-modal {
+    font-size: 0.8em;
+  }
+
+  .about-section {
+    flex-direction: column-reverse;
+  }
+
+  .about-image img {
+    height: 389px;
+    padding: 2px;
+  }
+
+  .founder-container {
+    flex-direction: column-reverse;
+  }
+
+  .line-container {
+    width: 80%;
+  }
+
+  .manager-container {
+    flex-direction: column-reverse;
+  }
+
+  .founder {
+    font-size: 1em;
+  }
+
+  .contact-section h2 {
+    font-size: 20px;
+  }
+
+  .contact-item p {
+    margin-top: 65px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .modal-content {
+    flex-direction: column-reverse;
+  }
+
+  .text-modal {
+    font-size: 0.6em;
+  }
+
+  .modal h3 {
+    font-size: 1.7em;
+  }
+
+  .manager-image {
+    width: 40%;
+  }
+
+  .contact-section h2 {
+    font-size: 18px;
+  }
+
+  .about-image img {
+    height: 361px;
+    padding: 2px;
+  }
+}
+
+@media all and (max-width: 480px) {
+  a {
+    padding: 4px 8px;
+  }
+
+  .section-separator h2 {
+    font-size: 2em;
+  }
+
+  .about-image img {
+    height: 293px;
+  }
+
+  .manager-image {
+    width: 50%;
+  }
+
+  .contact-section h2 {
+    font-size: 16px;
+  }
+
+  .contact-item p {
+    font-size: 16px;
+  }
+
+  .founder-image {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  a {
+    padding: 4px 3px;
+    font-size: 9px;
+  }
+
+  .text-container h1 {
+    padding-top: 20px;
+    font-size: 22px;
+  }
+
+  .text-container h2 {
+    font-size: 20px;
+    margin-top: 35px;
+  }
+
+  .text-container p {
+    margin-top: 15px;
+  }
+
+  .text-adjust {
+    font-size: 0.8em;
+  }
+
+  .section-separator h2 {
+    font-size: 1.5em;
+  }
+
+  .modal-content img {
+    width: 140px;
+    border: 5px solid #ffa500;
+  }
+
+  .about-image img {
+    height: 200px;
+  }
+
+  .founder {
+    font-size: 0.8em;
+  }
+
+  .award-content img {
+    height: 202px;
+  }
+
+  .award-content .result {
+    height: 375px;
+  }
+
+  .footer p {
+    font-size: 0.8em;
+  }
+
+  .contact-item p {
+    font-size: 11px;
+    margin-top: 55px;
+  }
+
+  .contact-section h2 {
+    font-size: 14px;
+  }
+
+  .product-images img {
+    width: 158px;
+    border: 6px solid #ffa500;
+  }
+
+  .manager-image {
+    width: 60%;
+  }
+
+  .founder-image {
+    width: 75%;
+  }
+
+  .contact-item img {
+    height: 22px;
+    width: 22px;
+    object-fit: cover;
+  }
 }
