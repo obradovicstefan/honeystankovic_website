@@ -736,4 +736,8 @@ a {
     width: 22px;
     object-fit: cover;
   }
+
+  .modal {
+    padding: 1rem;
+  }
 }
