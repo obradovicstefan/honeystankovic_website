@@ -122,10 +122,10 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   height: 100vh;
   width: 100%;
   text-align: center;
+  padding: 1rem;
 }
 
 .about-container {
@@ -134,7 +134,8 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 150px;
+  padding: 4rem;
+  max-width: 80%;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
