@@ -175,6 +175,7 @@ h2 {
 .text-adjust {
   color: #ffbf00;
   font-weight: 700;
+  text-align: center;
   font-size: 1.1em;
   text-transform: uppercase;
 }
@@ -458,6 +459,7 @@ h2 {
   height: auto;
   border: 8px solid #ffa500;
   object-fit: cover;
+  cursor: pointer;
 }
 
 #product-modal.modal-award .modal-content img {
@@ -512,6 +514,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 40px;
   margin: 30px 0;
 }
 
@@ -520,8 +523,8 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  max-width: 420px;
   margin: 40px 30px;
-  gap: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -529,6 +532,58 @@ h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 }
+
+.award-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.award-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+.award-hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.award-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.award-image-wrapper:hover::after {
+  opacity: 1;
+}
+
+.award-image-wrapper:hover .award-hover-text {
+  opacity: 1;
+}
+
+
 
 .award-content img {
   max-width: 100%;
