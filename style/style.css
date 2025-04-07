@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
@@ -255,7 +255,6 @@ h2 {
   font-weight: 800;
 }
 
-
 .section-separator p {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -461,6 +460,15 @@ h2 {
   object-fit: cover;
 }
 
+#product-modal.modal-award .modal-content img {
+  width: 700px;
+  height: auto;
+}
+
+#product-modal.modal-award .modal-content img.result {
+  width: 550px;
+}
+
 .btn-close-container {
   display: flex;
   justify-content: flex-end;
@@ -514,6 +522,12 @@ h2 {
   flex-direction: column;
   margin: 40px 30px;
   gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 }
 
 .award-content img {
