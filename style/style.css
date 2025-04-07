@@ -124,9 +124,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
   min-height: 100vh;
-  padding: 40px 0;
+  padding: 40px 20px;
   width: 100%;
   text-align: center;
 }
@@ -137,8 +136,9 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 4rem;
-  max-width: 80%;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  width: 90%;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -149,6 +149,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   z-index: 2;
+  margin: 0 auto;
 }
 
 .about-container p {
@@ -157,13 +158,13 @@ a {
   font-size: 1.1em;
   text-transform: uppercase;
   margin-top: 30px;
+  line-height: 1.6;
 }
 
 .about-container h1,
-h2 {
-  color: white;
-  font-size: 47px;
-  text-transform: uppercase;
+.about-container h2 {
+  font-size: 1em;
+  margin-top: 20px;
 }
 
 .text-container {
@@ -174,7 +175,6 @@ h2 {
   gap: 10px;
   margin-top: -30px;
 }
-
 
 .text-adjust {
   color: #ffbf00;
