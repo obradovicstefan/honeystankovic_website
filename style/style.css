@@ -6,6 +6,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
@@ -14,7 +22,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Roboto Condensed";
-  overflow-x: hidden;
+  width: 100%;
 }
 
 html {
@@ -37,7 +45,7 @@ a {
 }
 
 .hero-section {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -46,6 +54,8 @@ a {
   position: relative;
   clip-path: inset(0);
   overflow: hidden;
+  left: 50%;
+  transform: translateX(-50%);
   &::before {
     content: "";
     position: absolute;
@@ -76,6 +86,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
   width: 800px;
   height: auto;
 }
@@ -103,10 +114,12 @@ a {
   margin-top: 90px;
   justify-content: space-between;
   align-items: center;
-  height: auto; /* Allows for content to adjust dynamically */
+  height: auto;
   min-height: 100vh;
   overflow: hidden;
   z-index: 0;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .image-container {
@@ -193,6 +206,10 @@ a {
   text-transform: uppercase;
 }
 
+.only-awards {
+  margin-top: 20px;
+}
+
 .founder {
   color: #ffbf00;
   font-weight: 700;
@@ -235,7 +252,7 @@ a {
   align-items: center;
   flex-direction: column;
   text-transform: uppercase;
-  padding: 50px;
+  padding: 50px 20px;
   width: 100%;
   font-family: "Roboto Condensed";
   font-weight: 700;
@@ -244,7 +261,7 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-  /* background-attachment: fixed; */
+  overflow: hidden;
 }
 
 .section-separator img {
@@ -259,9 +276,11 @@ a {
 }
 
 .section-separator .title-products {
-  font-size: 6em;
+  font-size: clamp(2.5em, 6vw, 6em);
   font-family: "Montserrat";
   font-weight: 800;
+  text-align: center;
+  width: 100%;
 }
 
 .section-separator .product-paragraph {
@@ -302,7 +321,7 @@ a {
 .founder-image img {
   height: auto;
   max-width: 100%;
-  padding: 30px;
+  padding: 40px;
   object-fit: cover;
 }
 
@@ -475,7 +494,7 @@ a {
 }
 
 .modal-content img {
-  width: 400px;
+  max-width: 600px;
   height: auto;
   border: 8px solid #ffa500;
   object-fit: cover;
@@ -488,7 +507,7 @@ a {
 }
 
 #product-modal.modal-award .modal-content img.result {
-  width: 550px;
+  width: 470px;
 }
 
 .btn-close-container {
@@ -681,6 +700,44 @@ a {
 /* RESPONSIVE */
 
 @media all and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    padding: 0 15px;
+    margin-top: 60px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .text-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .about-adjust {
+    margin: 100px auto;
+  }
+
+  .about-cnt2 {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+
+  .about-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
   .header img {
     height: 150px;
     object-fit: contain;
@@ -694,6 +751,8 @@ a {
     margin-top: 20px;
   }
 
+  
+
   .text-adjust {
     font-size: 1em;
   }
@@ -703,7 +762,7 @@ a {
   }
 
   .product-section {
-    margin: 15px;
+    padding: 10px;
   }
 
   .section-separator {
@@ -718,21 +777,31 @@ a {
     margin-top: 40px;
   }
 
-  .contact-section {
-    height: auto;
-    min-height: 100vh;
-    padding: 40px 0;
-    margin: 50px auto;
-  }
-
   a {
     font-size: 11px;
+  }
+
+  .product-images {
+    flex: 0 1 180px;
+    margin: 5px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 400px;
   }
 }
 
 @media all and (max-width: 992px) {
   .text-adjust {
     font-size: 0.9em;
+  }
+
+  .modal-content img {
+    width: 400px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 300px;
   }
 }
 
@@ -760,6 +829,7 @@ a {
     text-align: center;
     padding: 15px;
   }
+  
 
   .text-adjust {
     font-size: 0.85em;
@@ -771,6 +841,22 @@ a {
 
   .text-modal {
     font-size: 0.8em;
+  }
+
+  .modal-content img {
+    width: 270px;
+  }
+
+  .modal-content {
+    flex-direction: column-reverse;
+  }
+
+  #product-modal.modal-award .modal-content img {
+    width: 500px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 350px;
   }
 
   .about-section {
@@ -808,6 +894,27 @@ a {
   .contact-item p {
     margin-top: 65px;
   }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .product-section {
+    padding: 5px;
+  }
+
+  .product-images {
+    flex: 0 1 160px;
+  }
+
+  .section-separator {
+    padding: 25px 10px;
+  }
 }
 
 @media all and (max-width: 600px) {
@@ -818,6 +925,7 @@ a {
   .text-modal {
     font-size: 0.6em;
   }
+  
 
   .modal h3 {
     font-size: 1.7em;
@@ -838,6 +946,14 @@ a {
   .about-image img {
     height: 361px;
     padding: 2px;
+  }
+
+  #product-modal.modal-award .modal-content img {
+    width: 380px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 350px;
   }
 }
 
@@ -873,6 +989,18 @@ a {
   .founder-image {
     width: 60%;
   }
+
+  .founder-image .creator {
+    padding: 0;
+  }
+
+  #product-modal.modal-award .modal-content img {
+    width: 320px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 310px;
+  }
 }
 
 @media all and (max-width: 401px) {
@@ -904,12 +1032,12 @@ a {
   }
 
   .modal-content img {
-    width: 140px;
+    width: 220px;
     border: 5px solid #ffa500;
   }
 
   .about-image img {
-    height: 200px;
+    height: 250px;
   }
 
   .founder {
@@ -918,6 +1046,10 @@ a {
 
   .award-content img {
     height: 202px;
+  }
+
+  .award-content .resize {
+    height: 300px;
   }
 
   .award-content .result {
@@ -962,5 +1094,25 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .modal-product {
+    height: 90vh;
+  }
+
+  .modal-award {
+    height: 70vh;
+  }
+
+  #product-modal.modal-award .modal-content img {
+    width: 250px;
+  }
+
+  #product-modal.modal-award .modal-content img.result {
+    width: 250px;
+  }
+
+  .section-separator .title-products {
+    font-size: 4em;
   }
 }

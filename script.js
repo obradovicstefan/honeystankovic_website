@@ -10,7 +10,7 @@ const awardItems = document.querySelectorAll(".award-content");
 function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-  modal.classList.remove("modal-award");
+  modal.classList.remove("modal-award", "modal-product");
 }
 
 document.querySelectorAll(".btn-open").forEach((button) => {
@@ -20,13 +20,17 @@ document.querySelectorAll(".btn-open").forEach((button) => {
     const description = product.dataset.description.replace(/\n/g, "<br>");
     const imageSrc = product.dataset.image;
 
-    // Update modal content
+    // Set content
     modalTitle.textContent = title;
     modalDescription.innerHTML = description;
     modalImage.src = imageSrc;
     modalImage.alt = title;
 
-    // Show modal and overlay
+    // Assign product-specific class
+    modal.classList.remove("modal-award");
+    modal.classList.add("modal-product");
+
+    // Show modal
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
   });
@@ -35,15 +39,18 @@ document.querySelectorAll(".btn-open").forEach((button) => {
 awardItems.forEach((item) => {
   item.addEventListener("click", () => {
     const title = item.getAttribute("data-title");
-    const description = item.getAttribute("data-description");
+    const description = item.getAttribute("data-description").replace(/\n/g, "<br>");
     const image = item.getAttribute("data-image");
     const imageClass = item.getAttribute("data-class");
 
+    // Set content
     modalTitle.textContent = title;
-    modalDescription.textContent = description;
+    modalDescription.innerHTML = description;
     modalImage.src = image;
     modalImage.alt = title;
 
+    // Assign award-specific class
+    modal.classList.remove("modal-product");
     modal.classList.add("modal-award");
 
     modalImage.className = "";
@@ -51,6 +58,7 @@ awardItems.forEach((item) => {
       modalImage.classList.add(imageClass);
     }
 
+    // Show modal
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
   });
@@ -59,3 +67,4 @@ awardItems.forEach((item) => {
 // Close modal logic
 document.querySelector(".btn-close").addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
