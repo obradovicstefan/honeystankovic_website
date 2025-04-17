@@ -485,6 +485,11 @@ a {
 
 .modal-text {
   flex: 1;
+  font-size: 1em;
+}
+
+.modal-text p {
+  margin-bottom: 1rem;
 }
 
 .text-modal {
@@ -534,13 +539,13 @@ a {
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, background-color 0.2s ease;
-  width: 35px;
-  height: 35px;
+  position: relative;
 
   &::before {
     content: "x";
     font-size: 1.5rem;
     color: grey;
+    line-height: 1;
   }
 
   &:hover {
