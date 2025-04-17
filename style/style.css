@@ -447,6 +447,7 @@ a {
 
 .modal {
   position: fixed;
+  display: flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -478,6 +479,7 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: auto;
   gap: 20px; /* Space between image and text */
 }
 
@@ -802,6 +804,10 @@ a {
 
   .modal-content img {
     width: 400px;
+  }
+
+  .modal-content {
+    flex-direction: column-reverse;
   }
 
   #product-modal.modal-award .modal-content img.result {
