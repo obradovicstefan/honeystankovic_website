@@ -7,7 +7,7 @@
       name="description"
       content="Otkrijte našu porodičnu pčelarsku proizvodnju, koja nudi čist, prirodan med i proizvode na bazi meda. Idealno za sve koji traže kvalitetan, ručno pravljen i održivo proizveden med, direktno iz košnice do vašeg doma."
     />
-    <link rel="stylesheet" href="style/style.css?v=1.3" />
+    <link rel="stylesheet" href="style/style.css?v=1.4" />
     <link rel="icon" href="images/LogoMEDEN.svg" />
     <link
       rel="preload"
@@ -27,6 +27,24 @@
         width="1669"
         height="945"
       />
+      <div id="menu-toggle" class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <!-- Dark overlay -->
+      <div id="menu-overlay" class="menu-overlay"></div>
+      
+      <!-- Mobile Menu Content -->
+      <div id="mobile-menu" class="mobile-menu">
+        <a href="#home">Početna</a>
+        <a href="#products">Proizvodi</a>
+        <a href="#about">O Nama</a>
+        <a href="#team">Naš tim</a>
+        <a href="#awards">Nagrade</a>
+        <a href="#contact">Kontakt</a>
+      </div>
       <div class="logo-container">
         <img
           src="images/logo.webp"
@@ -36,13 +54,15 @@
           height="1066.66"
         />
       </div>
-      <div class="links">
-        <a href="#home">Početna</a>
-        <a href="#products">Proizvodi</a>
-        <a href="#about">O Nama</a>
-        <a href="#team">Naš tim</a>
-        <a href="#awards">Nagrade</a>
-        <a href="#contact">Kontakt</a>
+      <div class="nav-wrapper">
+        <div class="links" id="links">
+          <a href="#home">Početna</a>
+          <a href="#products">Proizvodi</a>
+          <a href="#about">O Nama</a>
+          <a href="#team">Naš tim</a>
+          <a href="#awards">Nagrade</a>
+          <a href="#contact">Kontakt</a>
+        </div>
       </div>
     </div>
 
@@ -353,7 +373,7 @@
         <button class="btn btn-open">Saznaj više</button>
       </div>
 
-      <div class="modal hidden " id="product-modal">
+      <div class="modal hidden" id="product-modal">
         <div class="btn-close-container">
           <button class="btn-close"></button>
         </div>
