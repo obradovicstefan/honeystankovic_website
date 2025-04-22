@@ -597,7 +597,7 @@ a {
 }
 
 .modal-content img {
-  max-width: 600px;
+  max-width: 400px;
   height: auto;
   border: 8px solid #ffa500;
   object-fit: cover;
