@@ -1,105 +1,110 @@
 "use strict";
 
-const modal = document.getElementById("product-modal");
-const overlay = document.getElementById("modal-overlay");
-const modalTitle = document.getElementById("modal-title");
-const modalDescription = document.getElementById("modal-description");
-const modalImage = document.getElementById("modal-image");
-const awardItems = document.querySelectorAll(".award-content");
+(() => {
+  // Cache DOM elements
+  const modal = document.getElementById("product-modal");
+  const overlay = document.getElementById("modal-overlay");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const modalImage = document.getElementById("modal-image");
+  const closeButton = document.querySelector(".btn-close");
+  const awardItems = document.querySelectorAll(".award-content");
+  const productButtons = document.querySelectorAll(".btn-open");
 
-// Mobile Menu Functionality
-document.addEventListener("DOMContentLoaded", function () {
-  // Mobile menu functionality
-  const menuToggle = document.getElementById("menu-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const menuOverlay = document.getElementById("menu-overlay");
+  // Mobile Menu Functionality
+  const initMobileMenu = () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
 
-  if (menuToggle && mobileMenu && menuOverlay) {
-    menuToggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      this.classList.toggle("open");
+    if (!menuToggle || !mobileMenu || !menuOverlay) return;
+
+    const toggleMenu = (e) => {
+      if (e) e.stopPropagation();
+      menuToggle.classList.toggle("open");
       mobileMenu.classList.toggle("active");
       menuOverlay.classList.toggle("active");
       document.body.classList.toggle("menu-open");
-    });
+    };
 
-    menuOverlay.addEventListener("click", function () {
+    const closeMenu = () => {
       menuToggle.classList.remove("open");
       mobileMenu.classList.remove("active");
-      this.classList.remove("active");
+      menuOverlay.classList.remove("active");
       document.body.classList.remove("menu-open");
-    });
+    };
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuOverlay.addEventListener("click", closeMenu);
 
     document.querySelectorAll("#mobile-menu a").forEach((link) => {
-      link.addEventListener("click", function () {
-        menuToggle.classList.remove("open");
-        mobileMenu.classList.remove("active");
-        menuOverlay.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      });
+      link.addEventListener("click", closeMenu);
     });
-  }
-});
+  };
 
-function closeModal() {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-  modal.classList.remove("modal-award", "modal-product");
-}
+  // Modal Functions
+  const closeModal = () => {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+    modal.classList.remove("modal-award", "modal-product");
+  };
 
-document.querySelectorAll(".btn-open").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    const product = event.currentTarget.closest(".product-images");
-    const title = product.dataset.title;
-    const description = product.dataset.description.replace(/\n/g, "<br>");
-    const imageSrc = product.dataset.image;
+  const openModal = (data) => {
+    const { title, description, image, isAward, imageClass } = data;
 
-    // Set content
     modalTitle.textContent = title;
-    modalDescription.innerHTML = description;
-    modalImage.src = imageSrc;
-    modalImage.alt = title;
-
-    // Assign product-specific class
-    modal.classList.remove("modal-award");
-    modal.classList.add("modal-product");
-
-    // Show modal
-    modal.classList.remove("hidden");
-    overlay.classList.remove("hidden");
-  });
-});
-
-awardItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    const title = item.getAttribute("data-title");
-    const description = item
-      .getAttribute("data-description")
-      .replace(/\n/g, "<br>");
-    const image = item.getAttribute("data-image");
-    const imageClass = item.getAttribute("data-class");
-
-    // Set content
-    modalTitle.textContent = title;
-    modalDescription.innerHTML = description;
+    modalDescription.innerHTML = description.replace(/\n/g, "<br>");
     modalImage.src = image;
     modalImage.alt = title;
 
-    // Assign award-specific class
-    modal.classList.remove("modal-product");
-    modal.classList.add("modal-award");
+    // Set modal class based on type
+    modal.classList.remove(isAward ? "modal-product" : "modal-award");
+    modal.classList.add(isAward ? "modal-award" : "modal-product");
 
-    modalImage.className = "";
-    if (imageClass) {
-      modalImage.classList.add(imageClass);
-    }
+    // Handle image class if provided
+    modalImage.className = imageClass || "";
 
     // Show modal
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
-  });
-});
+  };
 
-// Close modal logic
-document.querySelector(".btn-close").addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+  // Event Listeners
+  const setupEventListeners = () => {
+    // Product buttons
+    productButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const product = event.currentTarget.closest(".product-images");
+        openModal({
+          title: product.dataset.title,
+          description: product.dataset.description,
+          image: product.dataset.image,
+          isAward: false,
+        });
+      });
+    });
+
+    // Award items
+    awardItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        openModal({
+          title: item.getAttribute("data-title"),
+          description: item.getAttribute("data-description"),
+          image: item.getAttribute("data-image"),
+          isAward: true,
+          imageClass: item.getAttribute("data-class"),
+        });
+      });
+    });
+
+    // Close modal handlers
+    closeButton.addEventListener("click", closeModal);
+    overlay.addEventListener("click", closeModal);
+  };
+
+  // Initialize everything when DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    initMobileMenu();
+    setupEventListeners();
+  });
+})();
