@@ -1,5 +1,13 @@
 "use strict";
 
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out-quad',
+    once: true
+  });
+});
+
 (() => {
   // Cache DOM elements
   const modal = document.getElementById("product-modal");
